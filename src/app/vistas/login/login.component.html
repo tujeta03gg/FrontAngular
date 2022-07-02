@@ -1,0 +1,41 @@
+<div class="sidenav">
+  <div class="login-main-text">
+
+  </div>
+</div>
+<div class="main">
+  <div class="col-md-3 col-sm-5">
+    <div class="login-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
+        <div class="form-group">
+          <label for="correo" class="form-label" style="font-size: 30px;" >Correo</label>
+          <input style="font-size: 20px;"
+            type="text"
+            class="form-control"
+            placeholder="Correo"
+            formControlName="correo"
+          />
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="pass" class="form-label" style="font-size: 30px;">Contraseña</label>
+          <input
+            style="font-size: 20px;"
+            type="password"
+            class="form-control"
+            placeholder="Contraseña"
+            formControlName="pass"
+          />
+        </div>
+
+        <button type="submit" class="form-control btn btn-black">Login</button>
+        <br>
+        <button type="submit" class="form-control btn btn-secondary">Registrar</button>
+      </form>
+      <hr>
+      <div class="alert alert-danger" role="alert" *ngIf="errorStatus">
+          <p>{{errorMsj}}</p>
+      </div>
+    </div>
+  </div>
+</div>
